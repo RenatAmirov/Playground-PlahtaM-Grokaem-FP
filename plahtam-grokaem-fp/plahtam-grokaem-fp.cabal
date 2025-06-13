@@ -26,6 +26,7 @@ source-repository head
 library
   exposed-modules:
       RnxLib
+      TipCalculator
   other-modules:
       Paths_plahtam_grokaem_fp
   autogen-modules:
