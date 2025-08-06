@@ -5,6 +5,7 @@ module RnxLib
 import TipCalculator
 
 someFunc :: IO ()
-someFunc = putStrLn (show (getTipPercentage ["Саша", "Маша"]))
+someFunc = putStrLn (show (getDiscountPercentage ["Саша", "Book", "Маша"]))
+--someFunc = putStrLn (show (getTipPercentage ["Саша", "Маша"]))
 --someFunc = putStrLn "someFunc"
 

@@ -1,5 +1,5 @@
 module TipCalculator 
-    ( getTipPercentage
+    ( getTipPercentage, getDiscountPercentage
     )
     where
 
@@ -19,3 +19,10 @@ getTipPercentage names =
 --   getTipPercentage ["Саша", "Маша"]          -> 10
 --   getTipPercentage ["Саша","Маша","Паша",..] -> 20 (6+ имен)
 --   getTipPercentage (take 5 $ repeat "Имя")   -> 10
+
+getDiscountPercentage :: [String] -> Int
+getDiscountPercentage items
+    | "Book" `elem` items = 5
+    | otherwise           = 0
+
+
