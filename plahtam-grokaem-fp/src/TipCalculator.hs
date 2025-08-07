@@ -1,5 +1,5 @@
 module TipCalculator 
-    ( getTipPercentage, getDiscountPercentage
+    ( getTipPercentage, getDiscountPercentage, rnxIncrement, rnxAdd
     )
     where
 
@@ -24,5 +24,13 @@ getDiscountPercentage :: [String] -> Int
 getDiscountPercentage items
     | "Book" `elem` items = 5
     | otherwise           = 0
+
+rnxIncrement :: Int -> Int
+rnxIncrement x = x + 1
+
+rnxAdd :: Int -> Int -> Int
+rnxAdd a b = a + b
+
+
 
 
