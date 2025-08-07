@@ -1,5 +1,11 @@
 module TipCalculator 
-    ( getTipPercentage, getDiscountPercentage, rnxIncrement, rnxAdd, rnxRemoveChar
+    ( 
+        getTipPercentage, 
+        getDiscountPercentage, 
+        rnxIncrement, 
+        rnxAdd, 
+        rnxRemoveChar,
+        rnxWordScore
     )
     where
 
