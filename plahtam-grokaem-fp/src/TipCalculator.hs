@@ -1,5 +1,5 @@
 module TipCalculator 
-    ( getTipPercentage, getDiscountPercentage, rnxIncrement, rnxAdd
+    ( getTipPercentage, getDiscountPercentage, rnxIncrement, rnxAdd, rnxRemoveChar
     )
     where
 
@@ -30,6 +30,12 @@ rnxIncrement x = x + 1
 
 rnxAdd :: Int -> Int -> Int
 rnxAdd a b = a + b
+
+rnxRemoveChar :: Char -> String -> String
+rnxRemoveChar = filter . (/=)
+
+rnxWordScore :: String -> Int
+rnxWordScore word = length $ rnxRemoveChar 'a' word
 
 
 
