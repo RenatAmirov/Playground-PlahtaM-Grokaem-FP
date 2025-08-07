@@ -5,7 +5,8 @@ module TipCalculator
         rnxIncrement, 
         rnxAdd, 
         rnxRemoveChar,
-        rnxWordScore
+        rnxWordScore,
+        firstChar
     )
     where
 
@@ -43,6 +44,6 @@ rnxRemoveChar = filter . (/=)
 rnxWordScore :: String -> Int
 rnxWordScore word = length $ rnxRemoveChar 'a' word
 
-
-
-
+firstChar :: String -> Char
+firstChar (x:_) = x
+firstChar []    = ' '
