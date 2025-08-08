@@ -6,7 +6,9 @@ module TipCalculator
         rnxAdd, 
         rnxRemoveChar,
         rnxWordScore,
-        firstChar
+        firstChar,
+        replan,
+        main2
     )
     where
 
@@ -47,3 +49,24 @@ rnxWordScore word = length $ rnxRemoveChar 'a' word
 firstChar :: String -> Char
 firstChar (x:_) = x
 firstChar []    = ' '
+
+------------------------------------------------------
+
+replan :: Eq a => [a] -> a -> a -> [a]
+replan [] _ _ = []  -- Пустой список остаётся пустым
+replan lst newCity target = 
+  let (prefix, suffix) = break (== target) lst  -- Разделяем список на часть до цели и остаток
+  in case suffix of
+      []      -> lst  -- Если цель не найдена, возвращаем исходный список
+      (x:xs) -> prefix ++ [newCity] ++ suffix  -- Вставляем новый элемент перед целью
+
+main2 :: IO ()
+main2 = do
+  let planA = ["Paris", "Berlin", "Kraków"]
+      planB = replan planA "Vienna" "Kraków"
+      planC = replan planA "Prague" "Warsaw"  -- Тест: цель не найдена
+  putStrLn $ "Plan B: " ++ show planB
+  putStrLn $ "Plan C: " ++ show planC
+
+  ---------------------------------------------------------
+
