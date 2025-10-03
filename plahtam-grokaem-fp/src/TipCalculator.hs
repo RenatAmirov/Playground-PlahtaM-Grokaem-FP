@@ -64,7 +64,8 @@ main2 :: IO ()
 main2 = do
   let planA = ["Paris", "Berlin", "Kraków"]
       planB = replan planA "Vienna" "Kraków"
-      planC = replan planA "Prague" "Warsaw"  -- Тест: цель не найдена
+      planC = replan planA "Prague" "Warsaw"  -- Тест: цель не найдена!
+  putStrLn $ "Plan A: " ++ show planA
   putStrLn $ "Plan B: " ++ show planB
   putStrLn $ "Plan C: " ++ show planC
 
